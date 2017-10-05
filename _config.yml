@@ -25,7 +25,11 @@ github_username: AwayQuEM
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rough
+kramdown:
+    input: GFM 
+    syntax_highlighter: rouge
+
 theme: minima 
 plugins:
   - jekyll-feed

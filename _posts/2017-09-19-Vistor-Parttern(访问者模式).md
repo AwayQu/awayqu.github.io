@@ -85,9 +85,9 @@ public void visitorTest() throws Exception {
 ```
 
 # 访问文件目录树
-## 
+
 ## 调用和输出
-{% highlight java %}
+```java
 @Test
 public void visitorDirectoryTreeTest() throws Exception {
 
@@ -131,7 +131,8 @@ public void visitorDirectoryTreeTest() throws Exception {
     root.accept(visitor);
 
 }
-{% endhighlight %}
+```
+
 ```shell
 > parent
 > |--child1
