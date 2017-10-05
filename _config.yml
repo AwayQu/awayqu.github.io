@@ -17,8 +17,9 @@ title: Away
 email: awayquym@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   iOS, py, java
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+img_url : "../../../../"
 # twitter_username: jekyllrb
 github_username: AwayQuEM 
 
