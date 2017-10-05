@@ -8,7 +8,7 @@ categories: designparttern
 # Visitor
 
 ## 接口
-```
+```java
 class interface Visitor {
   public visitor(Node node);
 }
@@ -25,7 +25,7 @@ class interface Node {
 # 示例
 
 ## 商店和客户
-```
+```java
 public class Merchant implements Node {
 
 
@@ -68,7 +68,7 @@ public class CustomerB implements Visitor {
 ```
 
 ## 调用和输出
-```
+```java
 @Test
 public void visitorTest() throws Exception {
     Merchant m = new Merchant();
@@ -87,7 +87,7 @@ public void visitorTest() throws Exception {
 # 访问文件目录树
 ## 
 ## 调用和输出
-```
+{% highlight java %}
 @Test
 public void visitorDirectoryTreeTest() throws Exception {
 
@@ -131,7 +131,7 @@ public void visitorDirectoryTreeTest() throws Exception {
     root.accept(visitor);
 
 }
-```
+{% endhighlight %}
 ```shell
 > parent
 > |--child1
