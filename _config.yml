@@ -25,7 +25,7 @@ github_username: AwayQuEM
 
 # Build settings
 markdown: kramdown
-highlighter: rough
+highlighter: rouge
 kramdown:
     input: GFM 
     syntax_highlighter: rouge

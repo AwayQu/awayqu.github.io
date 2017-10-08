@@ -142,6 +142,13 @@ blockquote {
 //   background-color: #eef;
 // }
 
+.highlighter-rouge {
+  @include relative-font-size(0.9375);
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  background-color: #eef;
+}
+
 code {
   padding: 1px 5px;
 }
