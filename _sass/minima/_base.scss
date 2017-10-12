@@ -82,7 +82,8 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: $base-font-weight;
+  // font-weight: $base-font-weight;
+  font-weight: bold;
 }
 
 
@@ -117,19 +118,21 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
-  padding-left: $spacing-unit / 2;
+  background-color:rgba(102,128,153,0.05);
+  border-left: 5px solid rgba(102,128,153,0.075);
   @include relative-font-size(1.125);
   letter-spacing: -1px;
-  font-style: italic;
+  padding: 15px 20px;
+  // font-style: italic;
 
   > :last-child {
     margin-bottom: 0;
   }
 }
 
-
+blockquote {
+  border-left-width: 10px;
+}
 
 /**
  * Code formatting
@@ -142,11 +145,14 @@ blockquote {
 //   background-color: #eef;
 // }
 
-.highlighter-rouge {
+code.highlighter-rouge {
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
   border-radius: 3px;
   background-color: #eef;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
 }
 
 code {
@@ -158,6 +164,7 @@ pre {
   overflow-x: auto;
 
   > code {
+    
     border: 0;
     padding-right: 0;
     padding-left: 0;
