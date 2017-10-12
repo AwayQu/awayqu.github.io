@@ -8,7 +8,16 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-
+hr {
+  margin: 2em 0;
+  border: 0;
+  border-top: 1px solid rgba(102,128,153,0.1);
+}
+// br {
+//   margin: 2em 0;
+//   border:0;
+//   border-top: 1px solid rgba(102,128,153,0.1);
+// }
 
 /**
  * Basic styling

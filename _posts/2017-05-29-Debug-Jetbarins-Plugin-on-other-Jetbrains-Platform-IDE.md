@@ -28,8 +28,8 @@ import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase;
 ```
 
 
-参考资料
-
+### 参考资料
+------
 * [How debug a custom plugin in PHPStorm](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206232149-How-debug-a-custom-plugin-in-PHPStorm)
 
 * [AppCode plugin development: How to run/debug from Idea CE](https://intellij-support.jetbrains.com/hc/en-us/community/posts/205812589-AppCode-plugin-development-How-to-run-debug-from-Idea-CE)
