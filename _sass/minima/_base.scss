@@ -236,3 +236,16 @@ pre {
     padding-top: 5px;
   }
 }
+
+.post-tags .categories {
+  background: rgba(44,63,81,0.3);
+  color: #fff;
+  margin-right: 6px;
+}
+
+.post-tags code {
+  color: rgba(44,63,81,0.5);
+  background: rgba(102,128,153,0.075);
+  border-radius: 0;
+  padding: 2px 5px;
+}

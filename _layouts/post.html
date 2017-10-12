@@ -14,13 +14,19 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
       {% endif %}</p>
   </header>
-<!--   
-  // TODO: TAGS
-  // TODO: TOC
-  {% for tag in page.tags %}
-      {{ tag }}
-  {% endfor %}
-   -->
+  
+  <!-- // TODO: TOC -->
+  
+  {% if page.categories %}
+    <p class="post-tags">  
+      <code class="categories">{{ page.categories }}</code>
+      {% for tag in page.tags %}
+        <code class="tags">{{ tag }}</code>
+      {% endfor %}
+    </p>
+  {% endif %}
+ 
+  
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
