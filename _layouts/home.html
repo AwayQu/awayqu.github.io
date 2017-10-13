@@ -9,7 +9,10 @@ layout: default
   {{ content }}
 
   <ul class="post-list">
+    {% assign ziliao = "资料" %}
     {% for post in site.posts %}
+      {% if post.tags contains ziliao and site.debug == "0" %}
+      {% else %}
       <li>
         {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -18,6 +21,7 @@ layout: default
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
       </li>
+      {% endif%}
     {% endfor %}
   </ul>
 
