@@ -4,6 +4,8 @@ title:  "Visitor Pattern(访问者模式)"
 date:   2017-09-19 00:48:22 +0800
 categories: designparttern
 ---
+* TOC
+{:toc}
 
 # Visitor
 -------
@@ -84,7 +86,7 @@ public void visitorTest() throws Exception {
 > order Goods B
 ```
 
-# 访问文件目录树
+## 访问文件目录树
 -------
 ## 调用和输出
 ```java
@@ -142,7 +144,7 @@ public void visitorDirectoryTreeTest() throws Exception {
 > |--file
 ```
 
-## 实际的使用
+# 实际的使用
 
 主要还是行为和数据结构的分离, 针对一个数据结构, 通过统一的接口实现不同的操作或者行为.
 
