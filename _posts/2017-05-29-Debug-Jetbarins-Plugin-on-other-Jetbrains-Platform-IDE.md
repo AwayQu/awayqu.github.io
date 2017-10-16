@@ -2,7 +2,8 @@
 layout: post
 title:  "Debug Jetbarins Plugin on other Jetbrains Platform IDE (在不同IDE中Debug Jetbrains Plugin)"
 date:   2017-05-29 02:32:22 +0800
-categories: jetbrains
+categories: java
+tags: [java, Jetbrains]
 ---
 
 ### 1.  打开 Project Structure (⌘ + ;)

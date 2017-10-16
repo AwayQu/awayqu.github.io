@@ -2,7 +2,8 @@
 layout: post
 title:  "Visitor Pattern(访问者模式)"
 date:   2017-09-19 00:48:22 +0800
-categories: designparttern
+categories: java
+tags: [java, 设计模式]
 ---
 * TOC
 {:toc}
