@@ -42,6 +42,7 @@ CATransaction支持`嵌套(nested)`，支持两种事务，`隐式事务(implici
 
 TODO: 可以多线程？
 详见 lock unlock API
+有什么作用？
 
 ### 例程
 ```swift
@@ -65,6 +66,11 @@ transitioningLayer.transform = CATransform3DMakeScale(3, 3, 3)
 CATransaction.commit() // Commits inner transaction
 CATransaction.commit() // Commits outer transaction
 ```
+# 名称解释
+
+## layer tree
+
+## render tree
 
 # 引用
 ------
