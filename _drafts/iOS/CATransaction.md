@@ -66,6 +66,13 @@ transitioningLayer.transform = CATransform3DMakeScale(3, 3, 3)
 CATransaction.commit() // Commits inner transaction
 CATransaction.commit() // Commits outer transaction
 ```
+
+# iOS系统中的CATransaction的应用
+
+## 转场
+TODO: 转场中使用的调用栈
+
+
 # 名称解释
 
 ## layer tree
@@ -76,8 +83,10 @@ CATransaction.commit() // Commits outer transaction
 ------
 
 [CATansaction Doc][apple-doc-catransaction]
-
+[Core Animation Program Guide][apple-doc-core-animation-programming-guide]
 
 [apple-doc-catransaction]: https://developer.apple.com/documentation/quartzcore/catransaction
 [apple-doc-core-animation]: https://developer.apple.com/documentation/quartzcore
 [apple-doc-caanimationgroup]: https://developer.apple.com/documentation/quartzcore/caanimationgroup
+
+[apple-doc-core-animation-programming-guide]: https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreAnimation_guide/CoreAnimationBasics/CoreAnimationBasics.html
