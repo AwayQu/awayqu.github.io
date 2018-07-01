@@ -15,7 +15,8 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
-  {% if jekyll.environment == 'production' and site.google_analytics %}
+  {% if  site.debug == "0" and site.google_analytics %}
+  <!-- <script>11111</script> -->
   {% include google-analytics.html %}
   {% endif %}
 </head>
