@@ -43,3 +43,21 @@ tags: [iOS, dev, tool]
 [Instabug](!https://instabug.com/developers) 报告BUG
 
 [Bugtags](!http://blog.bugtags.com/)
+
+# 用户数据统计
+
+flurry
+
+firebase
+
+友盟
+
+# 图片处理
+
+[在线图片处理](!https://pinetools.com/resize-image)
+
+[在线图片压缩](!https://tinypng.com/)
+
+[appicon生成](!https://appicon.co/)
+
+[appicon生成](!http://appiconmaker.co/)
