@@ -8,6 +8,8 @@ layout: default
   
   {{ content }}
 
+ 
+
   <ul class="post-list">
     {% assign ziliao = "资料" %}
     {% for post in site.posts %}
@@ -32,6 +34,17 @@ layout: default
       {% endif%}
     {% endfor %}
   </ul>
+
+  <div class="post-tags-list">
+    {% for tag in site.tags %}
+    {% assign count = tag | last | size %}
+    {% assign fontsize = count | times: 4 %}
+    <!-- {% if count  > 2 %} -->
+      <a class="post-tags-item" href="{{ page.url }}./tag/{{ tag | first }}" title="{{ tag | first }}" data-count="{{ count }}" style="font-size: {% if fontsize > 24 %}24{% else %}{{ fontsize }}{% endif %}px">{{ tag | first }}</a>
+    <!-- {% endif %} -->
+    {% endfor %}
+
+  </div>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 

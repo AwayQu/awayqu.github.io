@@ -39,9 +39,29 @@ google_analytics: UA-121621406-1
 theme: minima 
 
 
+jekyll-archives:
+  enabled: 
+    - tags
+    - categories
+    - year
+    - month
+  layouts:
+    year: archive
+    month: archive
+    tag: archive
+    category: archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'
+
+
+
 whitelist: []
 plugins:
   - jekyll-feed
+  - jekyll-archives
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
