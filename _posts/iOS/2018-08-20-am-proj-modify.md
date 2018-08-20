@@ -356,3 +356,7 @@ end
 {% include toggle-field.html toggle-name="toggle-thats4" button-text="Toggle Code" toggle-text=code-capture %}
 
 * `pod` vendored_framework
+
+# 扩展
+
+> 通过 `pod` 的流程机制，可以实现`ruby` 库 `xcodeproj`, 可以实现 `源代码` 和 `framework` 互相切换的`pod plugin`
