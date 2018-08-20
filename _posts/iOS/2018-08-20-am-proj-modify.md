@@ -238,7 +238,7 @@ end
 > 3. 主工程`Build Phases`中插入, `Check Pods Manifest.lock`，`Embed Pods Frameworks`， `Copy Pods Resource`
 > 4. 计算依赖项hash值以及记录版本号，生成 `Podfile.lock` 以及 `Manifest.lock`
 
-#### xcconfig
+### xcconfig
 
 > `xcodeproj` 有许多层级的编译指令描述配置， 主要有单文件的 `Complier Flages`, `xcodeporj` 文件内的 `Build Settings`， 以及 `xcconfig` 文件级别的配置， 还有 xcodebuild 以及 xcrun的命令 option。 （动态性依次递增）
 
