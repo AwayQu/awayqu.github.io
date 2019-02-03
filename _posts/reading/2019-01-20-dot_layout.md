@@ -15,10 +15,10 @@ tags: [reading, 算法]
 ```
 procedure draw_graph() 
 begin
-rank();
-ordering(); 
-position(); 
-make_splines();
+    rank();
+    ordering(); 
+    position(); 
+    make_splines();
 end
 ```
 
@@ -126,3 +126,5 @@ procedure feasible_tree()
     init_cutvalues();
 end
 ```
+
+[union-find](https://blog.csdn.net/guoziqing506/article/details/78752557)
