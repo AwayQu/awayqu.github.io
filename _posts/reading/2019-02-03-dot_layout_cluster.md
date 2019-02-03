@@ -17,3 +17,5 @@ tags: [reading, 算法]
   - rank1 # 将转化后的图 rank
   - expand_ranksets # 展开 之前collaspe 的 group
 ```
+# 分析
+`rank1` 以及 `expand_ranksets` 之后, 才能决定每一层有多少个节点,** 需要优化单层节点个数, 以及根据cluster的情况**, 调整纵横比
