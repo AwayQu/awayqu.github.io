@@ -302,7 +302,7 @@ __TEXT.__cstring     程序中c语言字符串
 __TEXT.__const       常量
 ```
 
-# Objc 相关 section
+# Objc 运行时相关 section
 
 ```python
 
@@ -318,8 +318,21 @@ __DATA.__objc_selfrefs    OC类自引用(self)
 __DATA.__objc_superrefs   OC类超类引用(super)
 __DATA.__objc_protolrefs  OC原型引用
 __DATA.__bss              没有初始化和初始化为0 的全局变量
+
 ```
-# 逆向
+
+# 逆向实践
+
+> 主要涉及到 `代码段` `sel name 字面量` `sel 定义`
+```s
+__TEXT.__text	(Normal)
+__TEXT.__objc_methname	(C-String Literals)
+__DATA.__objc_selrefs	(Literal Pointers)
+```
+
+## bugly 热修复实现
+
+## UIKit CoreAnimation [CATransaction commit] 时机
 
 
 # 引用
@@ -344,7 +357,7 @@ __DATA.__bss              没有初始化和初始化为0 的全局变量
 
 [mach o load](https://www.blackhat.com/presentations/bh-dc-09/Iozzo/BlackHat-DC-09-Iozzo-Macho-on-the-fly.pdf)
 
-[macho js][https://www.jianshu.com/p/4ab0e06c5ec9 ]
+[macho js](https://www.jianshu.com/p/4ab0e06c5ec9)
 <!--
- 
- -->
+ 。。。
+-->
