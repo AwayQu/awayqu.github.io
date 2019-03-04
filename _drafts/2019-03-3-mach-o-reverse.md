@@ -46,7 +46,7 @@ tags: [iOS, clang, dyld]
 > mach-o 主要梗概
 
 
-```python
+```s
 > otool -h -v MachODemoexe                                                               
 Mach header
       magic cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
@@ -324,6 +324,7 @@ __DATA.__bss              没有初始化和初始化为0 的全局变量
 # 逆向实践
 
 > 主要涉及到 `代码段` `sel name 字面量` `sel 定义`
+
 ```s
 __TEXT.__text	(Normal)
 __TEXT.__objc_methname	(C-String Literals)
