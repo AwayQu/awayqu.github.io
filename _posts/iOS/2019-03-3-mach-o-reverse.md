@@ -508,6 +508,8 @@ LC 49: LC_FUNCTION_STARTS    	Offset: 21067184, Size: 100160 (0x14175b0-0x142fcf
 LC 50: LC_DATA_IN_CODE       	Offset: 21167344, Size: 2592 (0x142fcf0-0x1430710) 
 LC 51: LC_CODE_SIGNATURE     	Offset: 28305504, Size: 230464 (0x1afe860-0x1b36ca0) 
 ```
+
+{% endcapture %}
 {% include toggle-field.html toggle-name="toggle-thats7" button-text="Toggle Code" toggle-text=code-capture %}
 
 
