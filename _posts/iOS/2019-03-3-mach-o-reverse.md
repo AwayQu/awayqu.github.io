@@ -765,15 +765,25 @@ void * +[BLYJCEBaseObject setupDynamicClass](void * self, void * _cmd) {
 
 > 3.查找`setupDynamicClass`调用
 > `setupDynamicClass` 方法的唯一 `ref` 是 `objc_method` 结构体，而其他函数调用中其实引用的是`sel`, `objc_msgSend` 方法的入口参数是 `receiver` 和 `sel` 还有 `parameters`, 所以需要先找到`methodname`,才能找到调用
+
 ---------
+
 ![image.png]({{ site.img_url }}imgs/iOS/bugly-method-rountine-ref.png)
+
 ---------
+
 ![image.png]({{ site.img_url }}imgs/iOS/bugly-method.png)
+
 ---------
+
 ![image.png]({{ site.img_url }}imgs/iOS/bugly-method-name.png)
+
 ---------
+
 ![image.png]({{ site.img_url }}imgs/iOS/bugly-method-name-ref-popover.png)
+
 ---------
+
 ![image.png]({{ site.img_url }}imgs/iOS/bugly-method-name-ref.png)
 
 
