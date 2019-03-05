@@ -665,6 +665,9 @@ void -[UIApplication _run](void * self, void * _cmd) {
 
 {% include toggle-field.html toggle-name="toggle-thats6" button-text="Toggle Code" toggle-text=code-capture %}
 
+> `CFRunLoopAddSource` 在`CoreFoundation`动态库中，所以是`__TEXT.__stubs` Section
+
+> 除了`CATransaction`之外，还可以看到`AutoReleasePool`以及`UIEventDispatcher`之类相关的处理都是类似的监听。
 
 ## bugly 热修复实现
 
