@@ -522,14 +522,13 @@ LC 51: LC_CODE_SIGNATURE     	Offset: 28305504, Size: 230464 (0x1afe860-0x1b36ca
 > 1.先找相关函数函数指针
 ```s
   CFRunLoopAddSource
-
 ; ================ B E G I N N I N G   O F   P R O C E D U R E ================
         		imp___stubs__CFRunLoopAddObserver:
 0000000000d48448         jmp        qword [_CFRunLoopAddObserver_ptr]           
-                        ; endp
-						
+                        ; endp					
 ```
-![image.png]({{ site.img_url }}imgs/iOS/mach-o-stub.png)
+
+![image.png]({{ site.img_url }}imgs/iOS/mach-o-sub.png)
 
 > 2. 右键查找Reference To
 ![image.png]({{ site.img_url }}imgs/iOS/mach-o-find-ref.png)
