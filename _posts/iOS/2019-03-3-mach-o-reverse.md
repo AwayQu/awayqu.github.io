@@ -371,7 +371,7 @@ exports:
     re-exports:      [ /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation ]
 
 ```
-
+{% endcapture %}
 {% include toggle-field.html toggle-name="toggle-thats8" button-text="Toggle Code" toggle-text=code-capture %}
 
 `/System/iOSSupport/System/Library/PrivateFrameworks/UIKitCore.framework`
@@ -408,6 +408,7 @@ LC 11: LC_FUNCTION_STARTS    	Offset: 4096, Size: 8 (0x1000-0x1008)
 LC 12: LC_DATA_IN_CODE       	Offset: 4104, Size: 0 (0x1008-0x1008) 
 LC 13: LC_CODE_SIGNATURE     	Offset: 4224, Size: 9376 (0x1080-0x3520)
 ```
+{% endcapture %}
 {% include toggle-field.html toggle-name="toggle-thats8" button-text="Toggle Code" toggle-text=code-capture %}
 
 {% capture code-capture %}
@@ -609,7 +610,9 @@ void __afterCACommitHandler() {
 {% include toggle-field.html toggle-name="toggle-thats5" button-text="Toggle Code" toggle-text=code-capture %}
 
 **-[UApplication _run]**
+
 {% capture code-capture %}
+
 ``` 
 void -[UIApplication _run](void * self, void * _cmd) {
     rbx = self;
@@ -663,6 +666,7 @@ void -[UIApplication _run](void * self, void * _cmd) {
     return;
 }
 ```
+
 {% endcapture %}
 
 {% include toggle-field.html toggle-name="toggle-thats6" button-text="Toggle Code" toggle-text=code-capture %}
