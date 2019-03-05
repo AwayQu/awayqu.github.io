@@ -529,10 +529,10 @@ LC 51: LC_CODE_SIGNATURE     	Offset: 28305504, Size: 230464 (0x1afe860-0x1b36ca
 ```
 ![image.png]({{ site.img_url }}imgs/iOS/mach-o-sub.png)
 
-> 2. 右键查找Reference To
+> 2.右键查找Reference To
 ![image.png]({{ site.img_url }}imgs/iOS/mach-o-find-ref.png)
 
-> 3. 点击对应Ref
+> 3.点击对应Ref
 ![image.png]({{ site.img_url }}imgs/iOS/mach-o-ref.png)
 
 ### CATransaction相关实现
@@ -678,7 +678,7 @@ void -[UIApplication _run](void * self, void * _cmd) {
 [bugly热修复地址](https://bugly.qq.com/v2/downloads)
 
 
-> 1. 找到`_objc_registerClassPair`
+> 1.找到`_objc_registerClassPair`
 ```s
                      _objc_registerClassPair:
 000000000026a0e0         db  0x00 ; '.'
@@ -693,7 +693,7 @@ void -[UIApplication _run](void * self, void * _cmd) {
  
  在 `Segment External Symbols`，因为`BuglyHotfix`是静态库，所以这些符号都是不确定的
 
- > 2. 查找`_objc_registerClassPair` 的 引用
+ > 2.查找`_objc_registerClassPair` 的 引用
 
 `+[BLYJCEBaseObject setupDynamicClass]`
 
@@ -763,7 +763,7 @@ void * +[BLYJCEBaseObject setupDynamicClass](void * self, void * _cmd) {
 
 > 大致实现就是根据 `BLYJCEBaseObject` 这个类的描述信息，然后注册创建动态类。
 
-> 3. 查找`setupDynamicClass`调用
+> 3.查找`setupDynamicClass`调用
 > `setupDynamicClass` 方法的唯一 `ref` 是 `objc_method` 结构体，而其他函数调用中其实引用的是`sel`, `objc_msgSend` 方法的入口参数是 `receiver` 和 `sel` 还有 `parameters`, 所以需要先找到`methodname`,才能找到调用
 ![image.png]({{ site.img_url }}imgs/iOS/bugly-method-rountine-ref.png)
 ![image.png]({{ site.img_url }}imgs/iOS/bugly-method.png)
