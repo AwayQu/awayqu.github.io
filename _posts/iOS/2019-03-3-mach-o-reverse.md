@@ -527,7 +527,6 @@ LC 51: LC_CODE_SIGNATURE     	Offset: 28305504, Size: 230464 (0x1afe860-0x1b36ca
 0000000000d48448         jmp        qword [_CFRunLoopAddObserver_ptr]           
                         ; endp					
 ```
-
 ![image.png]({{ site.img_url }}imgs/iOS/mach-o-sub.png)
 
 > 2. 右键查找Reference To
@@ -612,7 +611,7 @@ void __afterCACommitHandler() {
 
 {% capture code-capture %}
 
-``` 
+``` c
 void -[UIApplication _run](void * self, void * _cmd) {
     rbx = self;
     r14 = objc_autoreleasePoolPush();
@@ -679,6 +678,98 @@ void -[UIApplication _run](void * self, void * _cmd) {
 [bugly热修复地址](https://bugly.qq.com/v2/downloads)
 
 
+> 1. 找到`_objc_registerClassPair`
+```s
+                     _objc_registerClassPair:
+000000000026a0e0         db  0x00 ; '.'
+000000000026a0e1         db  0x00 ; '.'
+000000000026a0e2         db  0x00 ; '.'
+000000000026a0e3         db  0x00 ; '.'
+000000000026a0e4         db  0x00 ; '.'
+000000000026a0e5         db  0x00 ; '.'
+000000000026a0e6         db  0x00 ; '.'
+000000000026a0e7         db  0x00 ; '.'
+```
+ 
+ 在 `Segment External Symbols`，因为`BuglyHotfix`是静态库，所以这些符号都是不确定的
+
+ > 2. 查找`_objc_registerClassPair` 的 引用
+
+`+[BLYJCEBaseObject setupDynamicClass]`
+
+{% capture code-capture %}
+
+```c
+void * +[BLYJCEBaseObject setupDynamicClass](void * self, void * _cmd) {
+    r31 = r31 - 0x70;
+    *(r31 + 0x40) = r22;
+    *(0x50 + r31) = r21;
+    *(r31 + 0x50) = r20;
+    *(0x60 + r31) = r19;
+    *(r31 + 0x60) = r29;
+    *(0x70 + r31) = r30;
+    r19 = self;
+    r0 = _NSStringFromClass(self);
+    r20 = r0;
+    if ([r0 hasPrefix:cfstring_JCEBaseObject_] != 0x0) {
+            r0 = _objc_msgSend(r20, "UTF8String");
+            r0 = _objc_getClass(r0);
+    }
+    else {
+            r0 = *@selector(jce_cmd);
+            r1 = "stringWithFormat:";
+            asm { stp        x8, x20, sp };
+            r0 = _objc_msgSend(r0, r1);
+            r0 = _objc_msgSend(r0, "UTF8String");
+            r21 = r0;
+            r20 = _objc_getClass(r0);
+            if (r20 == 0x0) {
+                    r20 = _objc_allocateClassPair(r19, r21, zero_extend_64(0x0));
+                    if (r20 == 0x0) {
+                            r20 = _objc_getClass(r21);
+                            if (r20 != 0x0) {
+                                    r0 = [r19 propertyInfos];
+                                    *(r31 + 0x18) = *0x269ba0;
+                                    *(r31 + 0x20) = zero_extend_64(0xc200);
+                                    *(0x30 + r31) = 0x0;
+                                    *(r31 + 0x28) = 0x271e0;
+                                    *(r31 + 0x30) = 0x62530;
+                                    *(0x40 + r31) = r20;
+                                    [r0 enumerateObjectsUsingBlock:r31 + 0x18];
+                                    _objc_registerClassPair(r20);
+                            }
+                    }
+                    else {
+                            r0 = [r19 propertyInfos];
+                            *(r31 + 0x18) = *0x269ba0;
+                            *(r31 + 0x20) = zero_extend_64(0xc200);
+                            *(0x30 + r31) = 0x0;
+                            *(r31 + 0x28) = 0x271e0;
+                            *(r31 + 0x30) = 0x62530;
+                            *(0x40 + r31) = r20;
+                            [r0 enumerateObjectsUsingBlock:r31 + 0x18];
+                            _objc_registerClassPair(r20);
+                    }
+            }
+            r0 = r20;
+    }
+    return r0;
+}
+```
+
+{% endcapture %}
+
+{% include toggle-field.html toggle-name="toggle-thats10" button-text="Toggle Code" toggle-text=code-capture %}
+
+> 大致实现就是根据 `BLYJCEBaseObject` 这个类的描述信息，然后注册创建动态类。
+
+> 3. 查找`setupDynamicClass`调用
+> `setupDynamicClass` 方法的唯一 `ref` 是 `objc_method` 结构体，而其他函数调用中其实引用的是`sel`, `objc_msgSend` 方法的入口参数是 `receiver` 和 `sel` 还有 `parameters`, 所以需要先找到`methodname`,才能找到调用
+![image.png]({{ site.img_url }}imgs/iOS/bugly-method-rountine-ref.png)
+![image.png]({{ site.img_url }}imgs/iOS/bugly-method.png)
+![image.png]({{ site.img_url }}imgs/iOS/bugly-method-name.png)
+![image.png]({{ site.img_url }}imgs/iOS/bugly-method-name-ref-popover.png)
+![image.png]({{ site.img_url }}imgs/iOS/bugly-method-name-ref.png)
 
 
 
