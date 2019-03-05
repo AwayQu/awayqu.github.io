@@ -409,7 +409,7 @@ LC 12: LC_DATA_IN_CODE       	Offset: 4104, Size: 0 (0x1008-0x1008)
 LC 13: LC_CODE_SIGNATURE     	Offset: 4224, Size: 9376 (0x1080-0x3520)
 ```
 {% endcapture %}
-{% include toggle-field.html toggle-name="toggle-thats8" button-text="Toggle Code" toggle-text=code-capture %}
+{% include toggle-field.html toggle-name="toggle-thats9" button-text="Toggle Code" toggle-text=code-capture %}
 
 {% capture code-capture %}
 
@@ -673,9 +673,12 @@ void -[UIApplication _run](void * self, void * _cmd) {
 
 > `CFRunLoopAddSource` 在`CoreFoundation`动态库中，所以是`__TEXT.__stubs` Section
 
-> 除了`CATransaction`之外，还可以看到`AutoReleasePool`以及`UIEventDispatcher`之类相关的处理都是类似的监听。
+> 除了`CATransaction`之外，还可以看到`AutoReleasePool`以及`UIEventDispatcher`之类相关的处理都是类似的Source监听。
 
 ## bugly 热修复实现
+
+[bugly热修复地址](https://bugly.qq.com/v2/downloads)
+
 
 
 
