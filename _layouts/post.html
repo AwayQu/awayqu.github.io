@@ -59,8 +59,12 @@ layout: default
   // const date = {{ page.date  }};
 //  const id = document.getElementsByTagName("title")[0].innerText;
 //  console.log(id);
+ var id  = window.location.pathname;
+ ids = id.split('/');
+ id = ids[ids.length - 1];
+ console.log(id);
  const gitment = new Gitment({
-        id: "test", // optional
+        id: id, // optional
         owner: 'AwayQu',
         repo: 'awayqu.github.io',
         oauth: {
