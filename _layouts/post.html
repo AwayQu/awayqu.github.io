@@ -63,6 +63,10 @@ layout: default
  ids = id.split('/');
  id = ids[ids.length - 1];
  console.log(id);
+
+ var labels = "blog,gitment";
+ labels = labels.split(",");
+
  const gitment = new Gitment({
         id: id, // optional
         owner: 'AwayQu',
@@ -71,8 +75,8 @@ layout: default
           client_id: 'cdbc5d637fa49cc2c6e0',
           client_secret: '99d673ad327749de19a1b591a2a61958150eb3c5',
         },
-    // ...
-    // For more available options, check out the documentation below
+        perPage: "20",
+        labels: labels
     })
 
     gitment.render('container')
