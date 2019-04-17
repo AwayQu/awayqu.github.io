@@ -17,6 +17,7 @@ layout: default
         d();
       }
     });
+   
 
   </script>
  <!-- TOC HIDE SHOW END -->
@@ -53,3 +54,21 @@ layout: default
     {% include disqus_comments.html %}
   {% endif %}
 </article>
+<div id="container"></div>
+<script>
+ const id = document.getElementsByTagName("title")[0].innerText;
+ console.log(id);
+ const gitment = new Gitment({
+        id: id, // optional
+        owner: 'AwayQu',
+        repo: 'awayqu.github.io',
+        oauth: {
+          client_id: 'cdbc5d637fa49cc2c6e0',
+          client_secret: '99d673ad327749de19a1b591a2a61958150eb3c5',
+        },
+    // ...
+    // For more available options, check out the documentation below
+    })
+
+    gitment.render('container')
+</script>
